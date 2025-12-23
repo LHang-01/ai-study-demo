@@ -1,19 +1,16 @@
-package com.liuhang.langchain4j;
+package com.liuhang.langchain4j.day2;
 
-import dev.langchain4j.data.message.ChatMessage;
-import dev.langchain4j.data.message.UserMessage;
-import dev.langchain4j.memory.ChatMemory;
+import com.liuhang.langchain4j.Assistant;
 import dev.langchain4j.memory.chat.ChatMemoryProvider;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
-import dev.langchain4j.model.chat.response.ChatResponse;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.store.memory.chat.InMemoryChatMemoryStore;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * 聊天记忆
+ */
 public class ChatMemoryTest {
     /**
      * 方式一：最常用（推荐）— AiServices + @MemoryId
@@ -57,4 +54,7 @@ public class ChatMemoryTest {
         System.out.println(assistant.chat(session, "我的名字是小刘"));
         System.out.println(assistant.chat(session, "我叫什么名字？"));
     }
+
+
+
 }

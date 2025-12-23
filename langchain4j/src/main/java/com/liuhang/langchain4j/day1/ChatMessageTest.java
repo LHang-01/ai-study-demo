@@ -1,15 +1,17 @@
-package com.liuhang.langchain4j;
+package com.liuhang.langchain4j.day1;
 
 import dev.langchain4j.data.message.*;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.chat.response.ChatResponse;
 import dev.langchain4j.model.openai.OpenAiChatModel;
-import dev.langchain4j.model.openai.internal.chat.ImageUrl;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class ChatMessageTestTest {
+/**
+ * day1 聊天和语言模型
+ */
+class ChatMessageTest {
 
     /**
      * 目前有四种类型的聊天消息，每种对应消息的一个"来源"：
