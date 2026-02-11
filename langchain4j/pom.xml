@@ -48,5 +48,17 @@
             <version>1.9.1-beta17</version>
         </dependency>
 
+        <!-- Source: https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-google-ai-gemini -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-google-ai-gemini</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--导入 langchain4j-easy-rag 依赖-->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-easy-rag</artifactId>
+        </dependency>
     </dependencies>
 </project>

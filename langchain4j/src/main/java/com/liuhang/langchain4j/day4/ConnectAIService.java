@@ -1,8 +1,6 @@
 package com.liuhang.langchain4j.day4;
 
 import com.liuhang.langchain4j.ApiKeys;
-import dev.langchain4j.community.model.dashscope.QwenChatModel;
-import dev.langchain4j.community.model.dashscope.QwenModelName;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import dev.langchain4j.service.AiServices;
@@ -70,7 +68,7 @@ public class ConnectAIService {
 
         GreetingExpert greetingExpert = AiServices.create(GreetingExpert.class, model);
         ChatBot chatBot = AiServices.builder(ChatBot.class)
-                .chatModel(ApiKeys.model)
+                .chatModel(ApiKeys.gpt_model)
                 .build();
 
         MilesOfSmiles milesOfSmiles = new MilesOfSmiles(greetingExpert, chatBot);

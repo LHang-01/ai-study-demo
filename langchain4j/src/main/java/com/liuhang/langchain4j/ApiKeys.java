@@ -1,6 +1,7 @@
 package com.liuhang.langchain4j;
 
 import dev.langchain4j.model.chat.ChatModel;
+import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 
 import static dev.langchain4j.model.openai.OpenAiChatModelName.GPT_4_O_MINI;
@@ -15,8 +16,15 @@ public class ApiKeys {
     }
     public static final String OPENAI_API_KEY = System.getenv("OPENAI_API_KEY");
 
-    public static ChatModel model= OpenAiChatModel.builder()
+    public static ChatModel gpt_model = OpenAiChatModel.builder()
             .apiKey(OPENAI_API_KEY)
             .modelName(GPT_4_O_MINI)
+            .build();
+
+    public static final String GEMINI_API_KEY = System.getenv("GEMINI_API_KEY");
+    public static ChatModel GEMINI_MODEL = GoogleAiGeminiChatModel.builder()
+            .apiKey(GEMINI_API_KEY)
+            .modelName("gemini-2.0-flash")
+            .temperature(0.2)
             .build();
 }

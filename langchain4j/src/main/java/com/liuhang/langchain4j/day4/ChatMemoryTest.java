@@ -1,16 +1,13 @@
 package com.liuhang.langchain4j.day4;
 
 import com.liuhang.langchain4j.Assistant;
-import dev.langchain4j.data.message.ChatMessage;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.UserMessage;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-import static com.liuhang.langchain4j.ApiKeys.model;
+import static com.liuhang.langchain4j.ApiKeys.gpt_model;
 
 public class ChatMemoryTest {
 
@@ -22,7 +19,7 @@ public class ChatMemoryTest {
     @Test
     public void test1(){
         Assistant assistant = AiServices.builder(Assistant.class)
-                .chatModel(model)
+                .chatModel(gpt_model)
                 .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
                 .build();
     }
@@ -37,7 +34,7 @@ public class ChatMemoryTest {
         }
 
         Assistant assistant = AiServices.builder(Assistant.class)
-                .chatModel(model)
+                .chatModel(gpt_model)
                 .chatMemoryProvider(memoryId -> MessageWindowChatMemory.withMaxMessages(10))
                 .build();
 

@@ -48,7 +48,7 @@ public class AIServiceTest {
      */
     @Test
     public void test2(){
-        Friend friend = AiServices.create(Friend.class, ApiKeys.model);
+        Friend friend = AiServices.create(Friend.class, ApiKeys.gpt_model);
 
         String answer = friend.chat("Hello"); // Hey! What's up?
         System.out.println(answer);
@@ -104,7 +104,7 @@ public class AIServiceTest {
 
         // 2. 构建 AI 服务，配置动态 system message
         CustomerService service = AiServices.builder(CustomerService.class)
-                .chatModel(ApiKeys.model)
+                .chatModel(ApiKeys.gpt_model)
                 .chatMemoryProvider(memoryProvider)// ← 关键：必须配置！
                 .systemMessageProvider(userId -> {
                     if ("vip_user".equals(userId)) {
@@ -147,7 +147,7 @@ public class AIServiceTest {
 
         // 使用
         ChatBot bot = AiServices.builder(ChatBot.class)
-                .chatModel(ApiKeys.model)
+                .chatModel(ApiKeys.gpt_model)
                 .build();
 
         String reply = bot.chat("你好，请介绍一下你自己。");
@@ -162,7 +162,7 @@ public class AIServiceTest {
 
         // 使用
         Translator translator = AiServices.builder(Translator.class)
-                .chatModel(ApiKeys.model)
+                .chatModel(ApiKeys.gpt_model)
                 .build();
         // 调用
         String result = translator.translate("Hello", "中文");

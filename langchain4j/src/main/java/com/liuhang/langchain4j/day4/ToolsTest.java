@@ -1,12 +1,11 @@
 package com.liuhang.langchain4j.day4;
 
-import com.liuhang.langchain4j.Assistant;
 import dev.langchain4j.agent.tool.Tool;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.UserMessage;
 import org.junit.jupiter.api.Test;
 
-import static com.liuhang.langchain4j.ApiKeys.model;
+import static com.liuhang.langchain4j.ApiKeys.gpt_model;
 
 /**
  * 工具（函数调用）
@@ -37,7 +36,7 @@ public class ToolsTest {
     @Test
     public void test1(){
         Assistant assistant = AiServices.builder(Assistant.class)
-                .chatModel(model)
+                .chatModel(gpt_model)
                 .tools(new Tools())
                 .build();
 

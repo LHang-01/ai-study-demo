@@ -2,7 +2,6 @@ package com.liuhang.langchain4j.day4;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.liuhang.langchain4j.ApiKeys;
-import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.chat.response.ChatResponse;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
@@ -49,7 +48,7 @@ public class AIServiceResult {
             Result<List<String>> generateOutlineFor(String topic);
         }
         Assistant assistant = AiServices.builder(Assistant.class)
-                .chatModel(ApiKeys.model)
+                .chatModel(ApiKeys.gpt_model)
                 .build();
         Result<List<String>> result = assistant.generateOutlineFor("Java");
 
@@ -75,7 +74,7 @@ public class AIServiceResult {
 
         }
 
-        SentimentAnalyzer sentimentAnalyzer = AiServices.create(SentimentAnalyzer.class, ApiKeys.model);
+        SentimentAnalyzer sentimentAnalyzer = AiServices.create(SentimentAnalyzer.class, ApiKeys.gpt_model);
 
         boolean positive = sentimentAnalyzer.isPositive("It's wonderful!");
         System.out.println(positive);
@@ -96,7 +95,7 @@ public class AIServiceResult {
             Priority analyzePriority(String issueDescription);
         }
 
-        PriorityAnalyzer priorityAnalyzer = AiServices.create(PriorityAnalyzer.class, ApiKeys.model);
+        PriorityAnalyzer priorityAnalyzer = AiServices.create(PriorityAnalyzer.class, ApiKeys.gpt_model);
 
         Priority priority = priorityAnalyzer.analyzePriority("The main payment gateway is down, and customers cannot process transactions.");
         // CRITICAL
